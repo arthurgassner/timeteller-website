@@ -169,7 +169,7 @@ sudo systemctl enable time-teller.service # Enable it
 We now have a working clock -- yet fully naked on my desk.
 I turn to a 3D modelling software -- [solvespace](https://solvespace.com), as I am a Linux user -- to draw what I'd see as a nice-looking housing.[^4]
 
-[^4]: The 3d files can be found [here](https://github.com/arthurgassner/time-teller/tree/main/3d-models).
+[^4]: The 3d files can be found [on this project's GitHub](https://github.com/arthurgassner/time-teller/tree/main/3d-models), [Thingiverse](https://www.thingiverse.com/thing:7130877), [Printables](https://www.printables.com/model/1398618-time-teller-a-literature-clock) and [Maker World](https://makerworld.com/en/models/1744549-time-teller-telling-the-time-through-quotes).
 
 <figure markdown="span">
   ![Pre-assembly clock](assets/how_to_build_it/solvespace.png){ width="100%" }
