@@ -183,8 +183,21 @@ After some 3D-printing, our parts are ready for assembly.
     At the start of this project, I didn't own a 3D printer, leading me to rely on print-as-a-service vendors.
     The lead time (typically 7-10 days) eventually led me to buy my own 3D printer, to be able to experiment faster.
 
+With our parts printed, we can insert threaded inserts [threaded inserts](https://en.wikipedia.org/wiki/Threaded_insert) -- with a soldering iron --, into each parts.
 
-After inserting the [threaded inserts](https://en.wikipedia.org/wiki/Threaded_insert) -- with a soldering iron -- and mounting the female-USB-C-to-male-micro-USB port, _tada!_, our clock is ready !
+<figure markdown="span">
+  ![Front parts, threaded inserts](assets/how_to_build_it/front-with-inserts.jpg){ width="100%" }
+  <figcaption>The two freshly-printed <b>front parts</b>, after adding all necessary threaded inserts.</figcaption>
+</figure>
+
+<figure markdown="span">
+  ![Threaded inserts and glue](assets/how_to_build_it/back-with-inserts.jpg){ width="100%" }
+  <figcaption>The freshly-printed <b>back part</b>, after adding all necessary threaded inserts.</figcaption>
+</figure>
+
+Once the two front parts are glued together[^5], and after mounting the female-USB-C-to-male-micro-USB port onto the back part, _tada!_, our clock is ready !
+
+[^5]: I used standard super strong glue, as it works well with the plastic I used (PLA).
 
 <figure markdown="span">
   ![Pre-assembly clock](assets/how_to_build_it/preassembly_clock.jpg){ width="100%" }
