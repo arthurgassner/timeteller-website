@@ -18,16 +18,16 @@ Cue to some building.
 First, I listed all things I'd expect to need -- naturally amending that list as I kept on building. Exhaustively:
 
 
-| Part                                      | Description                                        | Price [CHF]   |
-| ----------------------------------------- | -------------------------------------------------- | ------------- |
-| **Waveshare's 7.5inch e-Paper screen**    | Our screen                                         |     60        |       
-| **Raspberry Pi Zero 2W**                  | To drive our screen.                               |     20        |       
-| **Micro SD card**                         | To house the RPi's OS.                             |     10        |       
-| **Waveshare's 7.5inch e-Paper HAT**       | To act as a bridge between our RPi and screen.     |     20        |       
-| **USB cable Type C**                      | To power our RPi.                                  |     10        |       
-| **3D-printed case**                       | To house everything.                               |    5 - 30[^2] |       
-| **Threaded inserts & screws**             | To hold everything together.                       |     ~3        |       
-| **Female USB-C to Micro USB connector**   | To avoid using Micro USB.                          |     ~5        |     
+| Part                                    | Description                                    | Price [CHF] |
+| --------------------------------------- | ---------------------------------------------- | ----------- |
+| **Waveshare's 7.5inch e-Paper screen**  | Our screen                                     | 60          |
+| **Raspberry Pi Zero 2W**                | To drive our screen.                           | 20          |
+| **Micro SD card**                       | To house the RPi's OS.                         | 10          |
+| **Waveshare's 7.5inch e-Paper HAT**     | To act as a bridge between our RPi and screen. | 20          |
+| **USB cable Type C**                    | To power our RPi.                              | 10          |
+| **3D-printed case**                     | To house everything.                           | 5 - 30[^2]  |
+| **Threaded inserts & screws**           | To hold everything together.                   | ~3          |
+| **Female USB-C to Micro USB connector** | To avoid using Micro USB.                      | ~5          |
 
 
 [^2]: The price of the 3D-printed case will depend on whether you're printing it yourself (~5CHF), or using a 3D-printing service (~30CHF).
@@ -95,7 +95,7 @@ Now e-ink technology is quite peculiar, in that it has a very high refresh time 
 - **Full-refresh**: The entire screen is refreshed at once, quite noticeably.
 - **Partial-refresh**: Only a part of the screen is refreshed at once, discretely. The downside is that a part of the previous image is usually visible, leading to a "dirty-looking" screen after a while.
 
-After diving through [Waveshare's demo codes](https://github.com/waveshareteam/e-Paper) and [Waveshare's wiki](https://www.waveshare.com/wiki/7.5inch_e-Paper_HAT_Manual#Working_With_Raspberry_Pi), and struggling to figure out what code was actually needed, I managed to display `Hello World` onto the screen. The full Python code is available [here](https://github.com/arthurgassner/time-teller/blob/main/hello_world.py).
+After diving through [Waveshare's demo codes](https://github.com/waveshareteam/e-Paper) and [Waveshare's wiki](https://www.waveshare.com/wiki/7.5inch_e-Paper_HAT_Manual#Working_With_Raspberry_Pi), and struggling to figure out what code was actually needed, I managed to display `Hello World` onto the screen. The full Python code is available [here](https://github.com/arthurgassner/timeteller/blob/main/hello_world.py).
 
 <figure markdown="span">
   ![Displaying hello world on our screen.](assets/how_to_build_it/hello_world.png){ width="100%" }
@@ -110,7 +110,7 @@ Wonderful! I can now work my software magic and end up with a small Python scrip
     I can set it up by running `crontab -e`, and then adding the line
     
     ```bash
-    * * * * * cd /home/pi/time-teller && /home/pi/time-teller/.venv/bin/python /home/pi/time-teller/main.py
+    * * * * * cd /home/pi/timeteller && /home/pi/timeteller/.venv/bin/python /home/pi/timeteller/main.py
     ```
 
 <figure markdown="span">
@@ -148,20 +148,20 @@ However, upon powering it up, I'd have to wait for `cron` job to run again, i.e.
 [^3]: Make sure you're hotspotting 2.4GHz WiFi, as that's the only kind seen by the RPi Zero 2W.
 
 
-Instead, I want my script to run on startup. To do so, we'll use [`systemd`](https://systemd.io/), leading us to write [`time-teller.service`](https://github.com/arthurgassner/time-teller/blob/main/time-teller.service).
+Instead, I want my script to run on startup. To do so, we'll use [`systemd`](https://systemd.io/), leading us to write [`timeteller.service`](https://github.com/arthurgassner/timeteller/blob/main/timeteller.service).
 
-I place our newly-written `.service` file at `/etc/systemd/system/time-teller.service`, register it, and, and enable it to run at boot.
+I place our newly-written `.service` file at `/etc/systemd/system/timeteller.service`, register it, and, and enable it to run at boot.
 
 ```bash
-sudo nano /etc/systemd/system/time-teller.service # Write the .service 
+sudo nano /etc/systemd/system/timeteller.service # Write the .service 
 sudo systemctl daemon-reload # Register it
-sudo systemctl enable time-teller.service # Enable it
+sudo systemctl enable timeteller.service # Enable it
 ```
 
 ??? tip "Test the `systemd` service"
 
-    - Ensure the service works with `sudo systemctl start time-teller.service`
-    - Check the service's status with `systemctl status time-teller.service`
+    - Ensure the service works with `sudo systemctl start timeteller.service`
+    - Check the service's status with `systemctl status timeteller.service`
 
 
 ## Step 4: House the hardware properly
@@ -169,7 +169,7 @@ sudo systemctl enable time-teller.service # Enable it
 We now have a working clock -- yet fully naked on my desk.
 I turn to a 3D modelling software -- [solvespace](https://solvespace.com), as I am a Linux user -- to draw what I'd see as a nice-looking housing.[^4]
 
-[^4]: The 3d files can be found [on this project's GitHub](https://github.com/arthurgassner/time-teller/tree/main/3d-models), [Thingiverse](https://www.thingiverse.com/thing:7130877), [Printables](https://www.printables.com/model/1398618-time-teller-a-literature-clock) and [Maker World](https://makerworld.com/en/models/1744549-time-teller-telling-the-time-through-quotes).
+[^4]: The 3d files can be found [on this project's GitHub](https://github.com/arthurgassner/timeteller/tree/main/3d-models), [Thingiverse](https://www.thingiverse.com/thing:7130877), [Printables](https://www.printables.com/model/1398618-timeteller-a-literature-clock) and [Maker World](https://makerworld.com/en/models/1744549-timeteller-telling-the-time-through-quotes).
 
 <figure markdown="span">
   ![Pre-assembly clock](assets/how_to_build_it/solvespace.png){ width="100%" }

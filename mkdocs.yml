@@ -1,7 +1,7 @@
 site_name: Time Teller
-site_url: https://time-teller.arthurgassner.ch
-repo_url: https://github.com/arthurgassner/time-teller
-repo_name: arthurgassner/time-teller
+site_url: https://timeteller.arthurgassner.ch
+repo_url: https://github.com/arthurgassner/timeteller
+repo_name: arthurgassner/timeteller
 theme:
   name: material
   custom_dir: overrides # Needed for the google search metatag
@@ -26,9 +26,9 @@ extra:
     - icon: material/email
       link: mailto:arth.gassner@gmail.com
     - icon: fontawesome/brands/github 
-      link: https://github.com/arthurgassner/time-teller-website
+      link: https://github.com/arthurgassner/timeteller-website
     - icon: fontawesome/brands/github 
-      link: https://github.com/arthurgassner/time-teller
+      link: https://github.com/arthurgassner/timeteller
 markdown_extensions:
   - attr_list
   - pymdownx.emoji:
