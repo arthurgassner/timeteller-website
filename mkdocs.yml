@@ -1,5 +1,5 @@
 site_name: Time Teller
-site_url: https://timeteller.arthurgassner.ch
+site_url: https://timeteller.arthurgassner.com
 repo_url: https://github.com/arthurgassner/timeteller
 repo_name: arthurgassner/timeteller
 theme:
@@ -22,7 +22,7 @@ extra:
     property: G-GGE35FFPNQ
   social:
     - icon: fontawesome/solid/globe
-      link: https://arthurgassner.ch
+      link: https://arthurgassner.com
     - icon: material/email
       link: mailto:arth.gassner@gmail.com
     - icon: fontawesome/brands/github 
